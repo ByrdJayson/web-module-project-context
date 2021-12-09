@@ -12,14 +12,22 @@ function App() {
 	const [cart, setCart] = useState([]);
 
 	const addItem = item => {
-		setCart({
+		setCart([
 			...cart, item
-		});
+		]);
+
+		console.log(cart);
 	};
+
+	const removeItem = itemId => {
+		
+		
+
+	}
 
 	return (
 		<ProductContext.Provider value={{products, addItem}}>
-			<CartContext.Provider value={{cart}}>
+			<CartContext.Provider value={cart}>
 			<div className="App">
 				<Navigation />
 
